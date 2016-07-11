@@ -4,7 +4,7 @@
   "type": "project",
   "description": "LiqPay driver for the Omnipay PHP payment processing library",
   "autoload": {
-    "psr-4": { "": "src/" }
+    "psr-4": { "Omnipay\\LiqPay\\": "src/" }
   },
   "require": {
     "omnipay/common": "~2.0",
