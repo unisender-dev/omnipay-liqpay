@@ -17,7 +17,7 @@ use Omnipay\Common\AbstractGateway;
  * @link https://www.liqpay.com/en/
  * @link https://www.liqpay.com/en/doc
  */
-class LiqPayGateway
+class Gateway
     extends AbstractGateway
 {
     const API_VERSION = 3;
