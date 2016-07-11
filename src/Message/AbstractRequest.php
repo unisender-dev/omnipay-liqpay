@@ -19,18 +19,7 @@ abstract class AbstractRequest
     /**
      * @var LiqPay
      */
-    protected $liqPay;
-
-    /**
-     * @param ClientInterface $httpClient
-     * @param HttpRequest $httpRequest
-     */
-    public function __construct(ClientInterface $httpClient, HttpRequest $httpRequest)
-    {
-        parent::__construct($httpClient, $httpRequest);
-
-        $this->liqPay = new LiqPay($this->getPublicKey(), $this->getPrivateKey());
-    }
+    private $liqPay;
 
     /**
      * Get the gateway API version
@@ -96,5 +85,17 @@ abstract class AbstractRequest
     public function setPrivateKey($privateKey)
     {
         return $this->setParameter('privateKey', $privateKey);
+    }
+
+    /**
+     * @return LiqPay
+     */
+    public function getLiqPay()
+    {
+        if (null === $this->liqPay) {
+            return $this->liqPay = new LiqPay($this->getPublicKey(), $this->getPrivateKey());
+        } else {
+            return $this->liqPay;
+        }
     }
 }

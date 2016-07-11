@@ -59,7 +59,7 @@ class CompletePurchaseRequest
         $data      = $this->httpRequest->request->get('data');
         $signature = $this->httpRequest->request->get('signature');
 
-        $controllingSignature = $this->liqPay->str_to_sign($this->getPrivateKey() . $data . $this->getPrivateKey());
+        $controllingSignature = $this->getLiqPay()->str_to_sign($this->getPrivateKey() . $data . $this->getPrivateKey());
 
         return array(
             'data'    => json_decode(base64_decode($data), true),
@@ -74,6 +74,7 @@ class CompletePurchaseRequest
     {
         $response = new PurchaseResponse($this, $data['data']);
         $response->setIsValid($data['data']);
+        $response->setTestMode($this->getTestMode());
 
         return $response;
     }

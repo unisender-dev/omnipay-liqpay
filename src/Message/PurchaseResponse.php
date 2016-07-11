@@ -54,6 +54,11 @@ class PurchaseResponse
     protected $isValid;
 
     /**
+     * @var bool
+     */
+    protected $testMode;
+
+    /**
      * @return mixed
      */
     public function isValid()
@@ -74,10 +79,30 @@ class PurchaseResponse
     }
 
     /**
+     * @return bool
+     */
+    public function isTestMode()
+    {
+        return $this->testMode;
+    }
+
+    /**
+     * @param bool $testMode
+     */
+    public function setTestMode($testMode)
+    {
+        $this->testMode = $testMode;
+    }
+
+    /**
      * @inheritDoc
      */
     public function isSuccessful()
     {
+        if ($this->isTestMode()) {
+            return static::STATUS_SANDBOX === $this->getStatus();
+        }
+
         return static::STATUS_SUCCESS === $this->getStatus();
     }
 
@@ -138,7 +163,7 @@ class PurchaseResponse
      */
     public function getTransactionId()
     {
-        return $this->data['order_id'];
+        return $this->data['payment_id'];
     }
 
     /**

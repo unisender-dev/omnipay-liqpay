@@ -118,10 +118,11 @@ class PurchaseRequest
      */
     public function sendData($data)
     {
-        $response = $this->liqPay->api(static::API_METHOD, $data);
+        $response = $this->getLiqPay()->api(static::API_METHOD, $data);
 
         $response = new PurchaseResponse($this, json_decode($response, true));
         $response->setIsValid(true);
+        $response->setTestMode($this->getTestMode());
 
         return $response;
     }
