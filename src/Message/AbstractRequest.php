@@ -16,6 +16,11 @@ use LiqPay;
 abstract class AbstractRequest
     extends \Omnipay\Common\Message\AbstractRequest
 {
+    const LIQPAY_TRANSACTION_TYPE_PAY = 'pay';
+    const LIQPAY_TRANSACTION_TYPE_HOLD = 'hold';
+    const LIQPAY_TRANSACTION_TYPE_SUBSCRIBE = 'subscribe';
+    const LIQPAY_TRANSACTION_TYPE_PAYDONATE = 'paydonate';
+
     /**
      * @var LiqPay
      */

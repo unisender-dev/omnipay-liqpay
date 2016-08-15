@@ -46,13 +46,13 @@ namespace Omnipay\LiqPay\Message;
  *
  *     // Do a purchase transaction on the gateway
  *     $transaction = $gateway->purchase(array(
- *         'amount'                    => '10.00',
- *         'currency'                  => 'USD', // USD | EUR | RUB | UAH'
- *         'transactionId'             => '123456',
- *         'description'               => 'Payment description',
- *         'clientIp'                  => '127.0.0.1',
- *         'notifyUrl'                 => '[URL for notifications of payment status change]'
- *         'card'                      => $card
+ *         'amount'        => '10.00',
+ *         'currency'      => 'USD', // USD | EUR | RUB | UAH'
+ *         'transactionId' => '123456',
+ *         'description'   => 'Payment description',
+ *         'clientIp'      => '127.0.0.1',
+ *         'notifyUrl'     => '[URL for notifications of payment status change]',
+ *         'card'          => $card
  *     ));
  *
  *     $response = $transaction->send();
@@ -132,7 +132,7 @@ class PurchaseRequest
      */
     protected function validateRequiredParams()
     {
-        $this->validate(array('version', 'card', 'amount', 'currency', 'description', 'transactionId', 'clientIp'));
+        $this->validate(array('card', 'amount', 'currency', 'description', 'transactionId', 'clientIp'));
         $this->getCard()->validate();
     }
 }

@@ -11,7 +11,7 @@ use Omnipay\Common\Message\RedirectResponseInterface;
  *
  * @link https://www.liqpay.com/en/doc/pay
  * @link https://www.liqpay.com/en/doc/callback
- * @see Omnipay\LiqPay\LiqPayGateway
+ * @see Omnipay\LiqPay\Gateway
  * @see Omnipay\LiqPay\Message\PurchaseRequest
  * @see Omnipay\LiqPay\Message\CompletePurchaseRequest
  */
