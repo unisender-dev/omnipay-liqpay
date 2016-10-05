@@ -73,7 +73,7 @@ class CompletePurchaseRequest
     public function sendData($data)
     {
         $response = new PurchaseResponse($this, $data['data']);
-        $response->setIsValid($data['data']);
+        $response->setIsValid($data['isValid']);
         $response->setTestMode($this->getTestMode());
 
         return $response;
