@@ -133,6 +133,7 @@ class PurchaseResponse
         return in_array($this->getStatus(), array(
             static::STATUS_FAILURE,
             static::STATUS_ERROR,
+            static::STATUS_REVERSED,
         ), true);
     }
 

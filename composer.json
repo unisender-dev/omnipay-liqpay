@@ -8,7 +8,7 @@
   },
   "require": {
     "omnipay/common": "~2.0",
-    "liqpay/liqpay": "dev-master"
+    "liqpay/liqpay": "^1"
   },
   "require-dev": {
     "omnipay/tests": "~2.0"
