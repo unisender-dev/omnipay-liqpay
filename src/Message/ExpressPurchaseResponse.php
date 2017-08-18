@@ -15,7 +15,7 @@ use Omnipay\Common\Message\AbstractResponse;
 class ExpressPurchaseResponse
     extends AbstractResponse
 {
-    const LIQPAY_CHECKOUT_URL = 'https://www.liqpay.com/api/3/checkout';
+    const LIQPAY_CHECKOUT_URL = 'https://www.liqpay.ua/api/3/checkout';
 
     /**
      * Get encoded data
