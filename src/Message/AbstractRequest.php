@@ -1,8 +1,6 @@
 <?php
 namespace Omnipay\LiqPay\Message;
 
-use Guzzle\Http\ClientInterface;
-use Symfony\Component\HttpFoundation\Request as HttpRequest;
 use LiqPay;
 
 /**
@@ -11,7 +9,7 @@ use LiqPay;
  *
  * @link https://www.liqpay.com/en/doc/checkout
  * @link https://github.com/liqpay/sdk-php
- * @see Omnipay\LiqPay\LiqPayGateway
+ * @see Omnipay\LiqPay\Gateway
  */
 abstract class AbstractRequest
     extends \Omnipay\Common\Message\AbstractRequest

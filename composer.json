@@ -1,16 +1,20 @@
 {
   "name": "unisender/omnipay-liqpay",
+  "type": "library",
   "license": "MIT",
-  "type": "project",
   "description": "LiqPay driver for the Omnipay PHP payment processing library",
-  "autoload": {
-    "psr-4": { "Omnipay\\LiqPay\\": "src/" }
-  },
   "require": {
-    "omnipay/common": "~2.0",
-    "liqpay/liqpay": "dev-master"
+    "php": ">=5.3",
+    "ext-json": "*",
+    "omnipay/common": "^3",
+    "liqpay/liqpay": "^1.2"
   },
   "require-dev": {
-    "omnipay/tests": "~2.0"
+    "omnipay/tests": "^3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Omnipay\\LiqPay\\": "src/"
+    }
   }
 }
